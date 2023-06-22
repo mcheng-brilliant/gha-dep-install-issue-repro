@@ -1,0 +1,13 @@
+name: Test Dependency Install
+
+on: [push]
+
+jobs:
+  install_dependencies:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: install packages and dependencies
+        run: |
+          sudo apt-get update
+          apt search libmemcached-dev
+          sudo apt-get install -y libmemcached-dev
